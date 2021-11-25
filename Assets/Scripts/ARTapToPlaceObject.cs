@@ -15,26 +15,30 @@ public class ARTapToPlaceObject : MonoBehaviour
     private ARRaycastManager raycastManager;
     [SerializeField]
     private ARSessionOrigin arSessionOrigin;
+
+private bool alreadyDrop = false;
     void Update()
     {
         UpdatePlacementPose();
         UpdatePlacementIndicator();
 
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && alreadyDrop == false)
         {
             PlaceObject();
+            alreadyDrop = true;
         }
     }
 
     private void PlaceObject()
     {
-        Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
+        var go = Instantiate(objectToPlace, placementPose.position,  placementPose.rotation);
+        go.transform.rotation *= Quaternion.Euler(0,180f,0);
     }
 
     private void UpdatePlacementIndicator()
     {
-      
-            placementIndicator.SetActive(true);
+
+            placementIndicator.SetActive(!alreadyDrop);
             placementIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
         
     }

@@ -165,7 +165,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.03058815, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -362,6 +362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1147739984}
   - component: {fileID: 1147739983}
+  - component: {fileID: 1147739985}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -381,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac2f5ade802b451086b9622bb05d476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPlace: {fileID: 2544679182710149831, guid: 67c5a682f2a2e4409a38ea3de609a8e1, type: 3}
+  objectToPlace: {fileID: 4226388846042934835, guid: 58fbbe9f6e874744780f2ec153fb39e5, type: 3}
   placementIndicator: {fileID: 1026660361}
   raycastManager: {fileID: 591999427}
   arSessionOrigin: {fileID: 591999424}
@@ -399,6 +400,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1147739985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147739982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82301e649275d4c43bd24949e4a3ac1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arCameraManager: {fileID: 1804820457}
+  targetLight: {fileID: 76289575}
 --- !u!1 &1332624519
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FocusMode: -1
   m_LightEstimationMode: -1
-  m_AutoFocus: 1
+  m_AutoFocus: 0
   m_LightEstimation: -1
   m_FacingDirection: 1
 --- !u!114 &1804820458
